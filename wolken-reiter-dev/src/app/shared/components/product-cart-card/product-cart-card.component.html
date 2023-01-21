@@ -1,0 +1,22 @@
+<div class="card-container">
+  <div class="card__checkbox-wrap">
+    <mat-checkbox [formControl]="checkboxControl" color="primary" class="card__checkbox"></mat-checkbox>
+  </div>
+  <div class="card__image-wrap">
+    <img class="card__image" src="{{ images[0].image }}" alt="image">
+  </div>
+  <div class="card-content">
+    <h3 class="card-name">
+      {{ name ? name : "Product name" }}
+    </h3>
+    <div [title]="description" *ngIf="description" class="card-description">
+      {{ description }}
+    </div>
+  </div>
+  <div *ngIf="price" class="card-price">
+    <span>{{ price | currency }}</span>
+  </div>
+  <button (click)="api.changeCartState(product)" class="delete-button" mat-icon-button>
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>

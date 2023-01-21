@@ -1,0 +1,130 @@
+<div class="panel">
+  <ul class="full-panel" *ngIf="!isCompact">
+    <li *ngIf="authService.authorized">
+      <a routerLink="add-product" color="primary" mat-stroked-button>
+        <mat-icon>add</mat-icon>
+        <span class="additionaly-text">{{ "TOP.ADD" | translate }}</span>
+      </a>
+    </li>
+    <li>
+      <a title="Check your e-mail" (click)="openDialog()" *ngIf="authService.authorized && !verified" class="mr-1" mat-icon-button class="sidenav__login-link">
+        <mat-icon class="sidenav__login-icon">mail_outline</mat-icon>
+      </a>
+    </li>
+    <li>
+      <a title="Favorite" routerLink="favorite" class="mr-1" mat-icon-button class="sidenav__login-link">
+        <mat-icon
+          class="sidenav__login-icon c-pink"
+          matBadgeSize="small"
+          matBadgePosition="below"
+          [matBadge]="(inFavorite$ | async)?.length"
+          matBadgeColor="warn">
+          favorite
+        </mat-icon>
+      </a>
+    </li>
+    <li>
+      <a title="Cart" routerLink="cart"  class="mr-1" mat-icon-button class="sidenav__login-link">
+        <mat-icon
+          class="sidenav__login-icon"
+          matBadgeSize="small"
+          matBadgePosition="below"
+          [matBadge]="(inCart$ | async)?.length"
+          matBadgeColor="warn">
+          shopping_cart
+        </mat-icon>
+      </a>
+    </li>
+    <li class="languages">
+      <ng-container [ngTemplateOutlet]="lang"></ng-container>
+    </li>
+    <li>
+      <span title="Hello" class="mr-1" *ngIf="authService.name">{{ "GREETING" | translate }}, </span>
+      <span title="Your name" class="mr-1" *ngIf="authService.name">{{ authService.name }}</span>
+      <span title="Your surname" class="mr-1" *ngIf="authService.surname">{{ authService.surname }}</span>
+    </li>
+    <li>
+      <a *ngIf="!authService.authorized" class="sidenav__login-button" routerLink="/login" mat-icon-button color="basic" title="login" class="sidenav__login-link">
+        <mat-icon class="sidenav__login-icon">perm_identity</mat-icon>
+      </a>
+    </li>
+    <li>
+      <button title="Log out" (click)="authService.logout()" *ngIf="authService.authorized" mat-icon-button class="sidenav__login-link">
+        <mat-icon class="sidenav__login-icon">exit_to_app</mat-icon>
+      </button>
+    </li>
+  </ul>
+
+  <!-- compact -->
+  <div class="compact-panel" *ngIf="isCompact">
+    <li class="languages">
+      <ng-container [ngTemplateOutlet]="lang"></ng-container>
+    </li>
+    <button class="mobile__menu" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button class="menu__button" mat-menu-item *ngIf="authService.name">
+        <span title="Hello" class="mr-1" >{{ "GREETING" | translate }}, </span>
+        <span title="Your name" class="mr-1">{{ authService.name }}</span>
+        <span title="Your surname" class="mr-1" *ngIf="authService.surname">{{ authService.surname }}</span>
+      </button>
+      <button class="menu__button" mat-menu-item *ngIf="authService.role === 'admin'">
+        <a routerLink="add-product">
+          <mat-icon>add</mat-icon>
+          <span>{{ "TOP.ADD" | translate }}</span>
+        </a>
+      </button>
+      <button class="menu__button" mat-menu-item>
+        <a title="Favorite" routerLink="favorite">
+          <mat-icon
+            class="sidenav__login-icon c-pink"
+            matBadgeSize="small"
+            matBadgePosition="below"
+            [matBadge]="(inFavorite$ | async)?.length"
+            matBadgeColor="warn">
+            favorite
+          </mat-icon>
+          {{ "TOP.FAVOURITE" | translate }}
+        </a>
+      </button>
+      <button class="menu__button" mat-menu-item>
+        <a title="Cart" routerLink="cart" >
+          <mat-icon
+            matBadgeSize="small"
+            matBadgePosition="below"
+            [matBadge]="(inCart$ | async)?.length"
+            matBadgeColor="warn">
+            shopping_cart
+          </mat-icon>
+          {{ "TOP.CART" | translate }}
+        </a>
+      </button>
+      <button class="menu__button" mat-menu-item *ngIf="authService.authorized && !verified">
+        <a title="Check your e-mail" (click)="openDialog()">
+          <mat-icon>mail_outline</mat-icon>
+        </a>
+        {{ "TOP.MAIL" | translate }}
+      </button>
+      <button class="menu__button" mat-menu-item *ngIf="!authService.authorized">
+        <a routerLink="/login" color="basic" title="login">
+          <mat-icon>perm_identity</mat-icon>
+          {{ "TOP.LOGIN" | translate }}
+        </a>
+      </button>
+      <button class="menu__button" mat-menu-item title="Log out" (click)="authService.logout()" *ngIf="authService.authorized">
+        <mat-icon>exit_to_app</mat-icon>
+        {{ "TOP.LOGOUT" | translate }}
+      </button>
+    </mat-menu>
+  </div>
+</div>
+
+
+<ng-template #lang>
+  <mat-select [formControl]="api.languageFormControl">
+    <mat-option (click)="translate.use('en')" value="{{ languages.EN }}"><span class="laguage__name">{{ languages.EN }}</span> 🇬🇧</mat-option>
+    <mat-option (click)="translate.use('de')" value="{{ languages.DE }}"><span class="laguage__name">{{ languages.DE }}</span> 🇩🇪</mat-option>
+    <mat-option (click)="translate.use('ru')" value="{{ languages.RU }}"><span class="laguage__name">{{ languages.RU }}</span> 🇷🇺</mat-option>
+  </mat-select>
+</ng-template>

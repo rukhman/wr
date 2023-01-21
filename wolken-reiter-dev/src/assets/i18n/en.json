@@ -1,0 +1,29 @@
+{
+  "GREETING": "Hello",
+  "SIDE": {
+    "MAIN": "Homepage",
+    "ABOUT": "About",
+    "CONTACTS": "Contacts"
+  },
+  "FORM": {
+    "MAIL": "Enter e-mail",
+    "PASSWORD": "Enter password",
+    "NAME": "Enter name",
+    "SURNAME": "Enter surname",
+    "COUNTRY": "Enter country",
+    "CODE": "Enter code",
+    "PHONE": "Enter phone",
+    "LOGIN": "Login",
+    "SIGNUP": "Sign up",
+    "SUBMIT": "Submit",
+    "REPEAT": "Repeat password"
+  },
+  "TOP": {
+    "ADD": "Add new product",
+    "FAVOURITE": "Favourite",
+    "CART": "Cart",
+    "LOGIN": "Log in",
+    "LOGOUT": "Log out",
+    "MAIL": "E-mail"
+  }
+}

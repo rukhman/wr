@@ -1,0 +1,25 @@
+// @import '~@angular/material/theming';
+
+
+// $custom-palette: (
+//   50: transparent,
+//   100: #ad9768,
+//   200: #e0c896,
+//   300: #7c693d,
+//  // ... continues to 900
+//  contrast: (
+//    50: #666,
+//    100: white,
+//    200: white,
+//    300: white,
+//    // ... continues to 900
+//  )
+// );
+
+// @include mat-core();
+// /* ======== Angular material custom themes ======== */
+// $my-custom-primary: mat-palette($custom-palette, 50, 100, 200);
+// $my-custom-accent: mat-palette($mat-pink, 100, 500, A100);
+// $my-custom-warn: mat-palette($mat-lime);
+// $my-custom-theme: mat-light-theme($my-custom-primary, $my-custom-accent, $my-custom-warn);
+// @include angular-material-theme($my-custom-theme);

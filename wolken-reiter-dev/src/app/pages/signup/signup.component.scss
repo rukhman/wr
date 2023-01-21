@@ -1,0 +1,26 @@
+@import '../../shared/styles/login-signup-form.scss';
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95% !important;
+  height: 95%;
+  border-radius: 1vw;
+  padding: 1vw;
+}
+
+.form__login {
+  width: 35% !important;
+  text-align: center;
+  margin-right: auto;
+}
+
+.form__signup {
+  width: 65% !important;
+  text-align: center;
+}
+
+.form__submit {
+  background-color: rgba(51, 51, 51, 0.624)
+}

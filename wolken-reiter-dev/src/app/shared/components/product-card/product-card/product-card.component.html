@@ -1,0 +1,49 @@
+<div class="card">
+  <div class="buttons" [ngStyle]="{opacity: isHandset ? 0 : 1}" *ngIf="auth.id === product.user_id">
+      <button
+      (click)="edit()" color="access"
+      mat-button
+      mat-mini-fab
+      class="action-button">
+        <mat-icon [inline]="true" class="action-button__icon">edit</mat-icon>
+      </button>
+      <button
+      (click)="delete()" color="access"
+      mat-button
+      mat-mini-fab
+      class="action-button">
+        <mat-icon [inline]="true" class="action-button__icon">close</mat-icon>
+      </button>
+  </div>
+  <app-swiper *ngIf="images.length" [images]="images"></app-swiper>
+  <img *ngIf="!images.length" src="{{defaultImage}}" alt="image">
+  <div class="card__name">
+    <h3>{{ product.name ? product.name : "Product name" }}</h3>
+  </div>
+  <div *ngIf="product?.price" class="card__price mb-1">
+    {{ product.price | currency }}
+  </div>
+  <div [title]="product.description" *ngIf="product?.description" class="card__description mb-1">
+    {{ product.description }}
+  </div>
+  <div class="card__buttons">
+    <button (click)="api.changeFavoriteState(product)"
+    [class.c-pink]="(inFavorite$ | async)?.includes(product.id)"
+    color="accent" matTooltip="Add to favorite"
+    mat-stroked-button>
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button (click)="api.changeCartState(product)"
+    [class.c-gold]="(inCart$ | async)?.includes(product.id)"
+    color="accent" matTooltip="Add to cart"
+    mat-stroked-button>
+      <mat-icon>add_shopping_cart</mat-icon>
+    </button>
+    <button (click)="buy()"
+    color="accent"
+    matTooltip="Buy"
+    mat-stroked-button>
+      <mat-icon>payment</mat-icon>
+    </button>
+  </div>
+</div>

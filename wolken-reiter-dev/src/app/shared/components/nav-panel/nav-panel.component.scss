@@ -1,0 +1,28 @@
+.panel {
+  .full-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 1vw;
+    }
+  }
+
+  .compact-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+
+@media (max-width: 600px) {
+  .additionaly-text {
+    display: none;
+  }
+}
+

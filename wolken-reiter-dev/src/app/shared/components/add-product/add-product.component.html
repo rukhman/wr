@@ -1,0 +1,33 @@
+<form [formGroup]="checkoutForm" [ngStyle]="{width: hostWidth}" class="form" (ngSubmit)="sendForm()">
+  <a [ngClass]="{'small-display__close': !isHandset}" class="form__close" mat-icon-button routerLink="/">
+    <mat-icon [ngClass]="{'small-display__close-icon': !isHandset}" class="form__close-icon">close</mat-icon>
+  </a>
+  <ul class="form__list">
+    <li class="form__item">
+      <mat-form-field color="accent" class="form__field" appearance="outline">
+        <mat-label>Product name</mat-label>
+        <input formControlName="name" matInput type="text">
+      </mat-form-field>
+    </li>
+    <li class="form__item">
+      <mat-form-field color="accent" class="form__field" appearance="outline">
+        <mat-label>Price, $</mat-label>
+        <input formControlName="price" matInput type="number">
+      </mat-form-field>
+    </li>
+    <li class="form__item">
+      <mat-form-field color="accent" class="form__field" appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea formControlName="description" matInput type="text" name="" id="" cols="30" rows="5"></textarea>
+      </mat-form-field>
+    </li>
+    <li class="form__item form__item-image">
+      <button class="form__btn" type="button" mat-raised-button mat-button preview-btn>Choose image</button>
+      <ngx-preview-gallery #gallery (images)="getSelectedImages($event)" class="gallery"></ngx-preview-gallery>
+    </li>
+  </ul>
+  <div class="form__buttons">
+    <button *ngIf="!editMode" color="primary" class="form__submit" mat-raised-button mat-button>Add</button>
+    <button *ngIf="editMode" color="primary" class="form__submit" mat-raised-button mat-button>Edit</button>
+  </div>
+</form>

@@ -1,0 +1,33 @@
+:host {
+  width: 40%;
+  height: 55%;
+  background-color: rgba(50, 50, 50, 0.7);
+  border-radius: 1vw;
+  padding: 1vw;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 3vw;
+  .copyright {
+    font-size: 1vw;
+  }
+}
+
+.contacts {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  :host {
+    width: 85%;
+  }
+}

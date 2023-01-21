@@ -1,0 +1,22 @@
+<div class="cart-container">
+  <div class="cart-body">
+    <ng-container *ngIf="products$ | async as products">
+      <cart-card
+        *ngFor="let product of products"
+        [product]="product"
+        [images]="product.images"
+        [name]="product.name"
+        [description]="product.description"
+        [price]="product.price"
+      ></cart-card>
+    </ng-container>
+  </div>
+  <div class="cart-footer">
+    <div class="cart__total-price">
+      <span>Total cost:</span> <span class="cost">{{ ((totalCost$ | async) || 0) | currency }}</span>
+    </div>
+    <div class="cart__buy-wrap">
+      <button class="cart__buy-button" [disabled]="!(totalCost$ | async)" color="primary" mat-stroked-button>Buy</button>
+    </div>
+  </div>
+</div>

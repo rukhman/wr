@@ -1,0 +1,11 @@
+<div class="swiper-container">
+  <swiper
+    [slidesPerView]="1"
+    [pagination]="{ clickable: true }"
+    [scrollbar]="{ draggable: true }"
+  >
+    <ng-template *ngFor="let slide of images" swiperSlide>
+      <img class="slide__img" src="{{ slide.image }}" alt="image">
+    </ng-template>
+  </swiper>
+</div>

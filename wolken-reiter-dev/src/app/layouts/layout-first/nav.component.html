@@ -1,0 +1,51 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav class="sidenav" #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="'side'"
+      [opened]="false">
+    <mat-toolbar class="sidenav-toolbar">
+      WR
+    </mat-toolbar>
+    <mat-nav-list>
+      <a routerLink="/" mat-list-item href="#">{{ "SIDE.MAIN" | translate }}</a>
+      <a mat-list-item routerLink="/about">{{ "SIDE.ABOUT" | translate }}</a>
+      <a mat-list-item routerLink="/contacts" href="#">{{ "SIDE.CONTACTS" | translate }}</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="sidenav__content">
+    <mat-toolbar color="primary">
+      <ul class="sidenav__toolbar">
+        <li class="sidenav__button">
+          <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        </li>
+        <li class="sidenav__title">
+          <a routerLink="/">
+            WOLKEN REITER
+          </a>
+        </li>
+        <li class="full-panel ml-1">
+          <app-nav-panel></app-nav-panel>
+        </li>
+        <li class="compact-panel">
+          <app-nav-panel [isCompact]="true"></app-nav-panel>
+        </li>
+      </ul>
+    </mat-toolbar>
+    <div class="content" [@routeChangeAnimation]="getRouteAnimationState(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+    <footer class="footer">
+      <span class="footer__copyright">© Wolken Reiter</span>
+      <div *ngIf="!isPermissionConfirmed" class="footer__permission">
+        <span>By staying on the site you confirm permission to use your personal data</span>
+        <button class="footer__permission-button" mat-stroked-button (click)="isPermissionConfirmed = true" color="primary" >ok</button>
+      </div>
+    </footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

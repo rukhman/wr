@@ -1,0 +1,17 @@
+<div class="wrap">
+  <p class="text" mat-dialog-content>{{ data.text }}</p>
+  <div class="actions" mat-dialog-actions>
+    <button (click)="confirm()" mat-button
+      [mat-dialog-close]="true"
+      mat-raised-button
+      mat-dialog-close>
+      {{ data.confirmText }}
+    </button>
+    <button (click)="reject()" mat-button
+      mat-dialog-close
+      mat-raised-button
+      mat-dialog-close>
+      {{ data.rejectText }}
+    </button>
+  </div>
+</div>

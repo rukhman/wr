@@ -1,0 +1,178 @@
+:host {
+  ::ng-deep {
+    .mat-select-trigger {
+      min-width: 65px;
+    }
+  }
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.logo {
+  max-height: 100%;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  border-radius: 1.5vw;
+  cursor: pointer;
+  &:hover {
+    border-radius: .5vw;
+  }
+}
+
+.transition-border {
+  transition: border-radius .3s ease;
+}
+
+.sidenav__content {
+  background-image: url(../../../assets/images/back-ground/2.jpg);
+  background-size: cover;
+}
+
+.sidenav {
+  background: linear-gradient(to bottom right, #1D1A1A, #51514E);
+  .sidenav-toolbar {
+    color: #666
+  }
+  a {
+    color: white;
+  }
+}
+
+.sidenav__title {
+  margin-right: auto;
+}
+
+.sidenav__toolbar {
+  display: flex;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 83%;
+  min-width: 350px;
+}
+
+.mat-drawer-content {
+  overflow: hidden;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  height: 7%;
+  min-width: 350px;
+}
+
+.sidenav__login-link {
+  display: flex;
+  align-items: center;
+}
+
+.footer__copyright {
+  padding-left: 1vw;
+  width: 100%;
+  line-height: 36px;
+  flex-basis: 50%;
+}
+
+.footer__permission {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  background-color: rgba(23, 73, 118, 0.5);
+  border-radius: 1vw;
+  width: 100%;
+  font-size: 1.1vw;
+  margin-right: 5vw;
+  padding: 0 1vw;
+  span {
+    margin-right: 1vw;
+  }
+  button {
+    font-size: 1.1vw;
+  }
+}
+
+.sidenav__login-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-toolbar.mat-primary {
+  background: transparent;
+  color: #fff;
+}
+
+.footer__permission-button {
+  color: #fff !important;
+}
+
+.languages {
+  max-width: 7vw;
+}
+
+.laguage__name, .languages {
+  font-size: 2.5vh;
+  margin-right: 4vh;
+  margin-left: 2vh;
+}
+
+.menu__button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.favorite {
+  margin-left: -1px;
+}
+
+.mobile__menu {
+  display: none
+}
+
+.compact-panel {
+  display: none;
+}
+
+.full-panel {
+  display: inherit;
+}
+
+@media (max-width: 700px) {
+  .mobile__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .compact-panel {
+    display: inherit;
+  }
+
+  .full-panel {
+    display: none;
+  }
+}

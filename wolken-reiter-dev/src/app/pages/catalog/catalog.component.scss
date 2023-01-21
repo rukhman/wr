@@ -1,0 +1,38 @@
+:host {
+  width: 95%;
+  height: 95%;
+  background-color: rgba(50, 50, 50, 0.7);
+  border-radius: 1vw;
+  padding: 1vw;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.product-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vw;
+  width: 33%;
+  max-height: 80vh;
+  margin-bottom: 1vw;
+}
+
+.productCard {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+@media (max-width: 600px) {
+  .product-wrap {
+    width: 100%;
+    min-height: 70vh;
+  }
+}

@@ -1,0 +1,44 @@
+
+.form__item-image {
+  margin-top: 3vh;
+}
+
+.container__img {
+  width: 17vw;
+  height: 18vw;
+}
+
+.form__btn {
+  margin-bottom: 1vw;
+}
+
+.gallery {
+  width: 100%;
+}
+
+::ng-deep {
+  ngx-preview-gallery {
+    height: 25vh !important;
+  }
+
+  .close {
+    background-size: contain;
+    background-size: 3vh !important;
+    width: 3vh !important;
+    height: 3vh !important;
+    background-color: rgba(191, 90, 90, 0.923);
+    border-radius: 50%;
+    padding: 2vh;
+  }
+}
+
+@media (max-width: 600px) {
+  ngx-preview-gallery {
+    height: 25vh !important;
+  }
+  ::ng-deep {
+    .close {
+      opacity: 1 !important;
+    }
+  }
+}

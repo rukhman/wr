@@ -1,0 +1,11 @@
+<div class="product-container">
+  <ng-container *ngIf="products$ | async as products">
+    <div *ngFor="let product of products" class="product-wrap">
+      <app-product-card
+        class="productCard"
+        [product]="product"
+        [images]="product.images"
+      ></app-product-card>
+    </div>
+  </ng-container>
+</div>

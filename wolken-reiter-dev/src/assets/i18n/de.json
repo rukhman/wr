@@ -1,0 +1,29 @@
+{
+  "GREETING": "Hallo",
+  "SIDE": {
+    "MAIN": "Homepage",
+    "ABOUT": "Über uns",
+    "CONTACTS": "Kontakte"
+  },
+  "FORM": {
+    "MAIL": "E-Mail eingeben",
+    "PASSWORD": "Passwort eingeben",
+    "NAME": "Name eingeben",
+    "SURNAME": "Surname eingeben",
+    "COUNTRY": "Land",
+    "CODE": "Code",
+    "PHONE": "Telefonnummer",
+    "LOGIN": "Login",
+    "SIGNUP": "Anmeldung",
+    "SUBMIT": "Senden",
+    "REPEAT": "Passwort wiederholen"
+  },
+  "TOP": {
+    "ADD": "Produkt hinzufügen",
+    "FAVOURITE": "Favorite",
+    "CART": "Warenkorb",
+    "LOGIN": "Log in",
+    "LOGOUT": "Log out",
+    "MAIL": "E-mail"
+  }
+}
